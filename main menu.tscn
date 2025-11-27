@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqrkychduafde"]
+
+[ext_resource type="Script" uid="uid://2rtswiwc0k1n" path="res://main_menu.gd" id="1_7mewq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0tb1q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bajiw"]
+texture = SubResource("CanvasTexture_0tb1q")
+modulate_color = Color(0.342906, 0.559319, 1, 0.890196)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tb1q"]
+bg_color = Color(0.278431, 0.905882, 0.290196, 1)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mewq"]
+bg_color = Color(0.913725, 0.215686, 0.227451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bajiw"]
+bg_color = Color(0.94902, 0.411765, 0.243137, 1)
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7mewq")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -644.0
+offset_top = -364.0
+offset_right = 653.0
+offset_bottom = 362.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_bajiw")
+
+[node name="start" type="Button" parent="."]
+layout_mode = 1
+offset_left = -87.0
+offset_top = -30.0
+offset_right = 87.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_0tb1q")
+text = "play"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = -87.0
+offset_top = 97.0
+offset_right = 85.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mewq")
+text = "exit"
+
+[node name="how to play" type="Button" parent="."]
+layout_mode = 0
+offset_left = -88.0
+offset_top = 35.0
+offset_right = 83.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_bajiw")
+text = "how to play"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.5
+offset_top = -288.0
+offset_right = 179.5
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "Boxs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="how to play" to="." method="_on_how_to_play_pressed"]

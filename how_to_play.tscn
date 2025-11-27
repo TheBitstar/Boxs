@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4ln1muqt5haf"]
+
+[ext_resource type="Script" uid="uid://c6yxyvel0txgh" path="res://how_to_play.gd" id="1_g0446"]
+[ext_resource type="Texture2D" uid="uid://cnfyonviw611a" path="res://files/how_to_play.png" id="2_g0446"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0446"]
+texture = ExtResource("2_g0446")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ad62"]
+bg_color = Color(0.948841, 0.410467, 0.244889, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0446"]
+bg_color = Color(0.278431, 0.905882, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvb5p"]
+bg_color = Color(0.913725, 0.215686, 0.227451, 1)
+
+[node name="how_to_play" type="Node2D"]
+script = ExtResource("1_g0446")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1147.0
+offset_bottom = 731.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_g0446")
+
+[node name="back" type="Button" parent="."]
+offset_left = 1149.0
+offset_top = 43.0
+offset_right = 1292.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ad62")
+text = "back"
+
+[node name="play" type="Button" parent="."]
+offset_left = 1150.0
+offset_top = 202.0
+offset_right = 1293.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_g0446")
+text = "play"
+
+[node name="exit" type="Button" parent="."]
+offset_left = 1148.0
+offset_top = 372.0
+offset_right = 1291.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_uvb5p")
+text = "exit"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
